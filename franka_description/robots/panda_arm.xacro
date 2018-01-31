@@ -207,5 +207,12 @@
       <child link="${arm_id}_link8"/>
       <axis xyz="0 0 0"/>
     </joint>
+    <link name="${arm_id}_EE"/>
+    <joint name="${arm_id}_jointEE" type="fixed">
+      <origin rpy="0 0 0.78539816339" xyz="0 0 0.1034"/>
+      <parent link="${arm_id}_link8"/>
+      <child link="${arm_id}_EE"/>
+      <axis xyz="0 0 0"/>
+    </joint>
   </xacro:macro>
 </robot>

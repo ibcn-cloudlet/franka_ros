@@ -51,6 +51,28 @@
         <joint name="panda_hand_joint" />
         <chain base_link="panda_link0" tip_link="panda_hand" />
     </group>
+    <group name="panda_arm_EE">
+        <link name="panda_link0" />
+        <link name="panda_link1" />
+        <link name="panda_link2" />
+        <link name="panda_link3" />
+        <link name="panda_link4" />
+        <link name="panda_link5" />
+        <link name="panda_link6" />
+        <link name="panda_link7" />
+        <link name="panda_link8" />
+        <link name="panda_EE" />
+        <joint name="panda_joint1" />
+        <joint name="panda_joint2" />
+        <joint name="panda_joint3" />
+        <joint name="panda_joint4" />
+        <joint name="panda_joint5" />
+        <joint name="panda_joint6" />
+        <joint name="panda_joint7" />
+        <joint name="panda_joint8" />
+        <joint name="panda_jointEE" />
+        <chain base_link="panda_link0" tip_link="panda_EE" />
+    </group>
     <group name="hand">
         <link name="panda_hand" />
         <link name="panda_leftfinger" />
@@ -97,6 +119,7 @@
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="hand" parent_link="panda_hand" group="hand" parent_group="panda_arm_hand" />
+    <end_effector name="EE" parent_link="panda_EE" group="panda_arm_EE" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="panda_hand" link2="panda_leftfinger" reason="Adjacent" />
     <disable_collisions link1="panda_hand" link2="panda_link3" reason="Never" />
@@ -134,4 +157,6 @@
     <disable_collisions link1="panda_link6" link2="panda_link7" reason="Adjacent" />
     <disable_collisions link1="panda_link6" link2="panda_rightfinger" reason="Never" />
     <disable_collisions link1="panda_link7" link2="panda_rightfinger" reason="Never" />
+    <disable_collisions link1="panda_link6" link2="panda_EE" reason="Never" />
+    <disable_collisions link1="panda_link7" link2="panda_EE" reason="Never" />
 </robot>
